@@ -6,7 +6,7 @@ app.on('ready', () => {
   mainWindow = new BrowserWindow({
     height: 500,
     width: 300,
-    show: false
+    show: false,
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
@@ -27,17 +27,10 @@ app.on('ready', () => {
     mainWindow.webContents.send('write-to-clipboard');
   });
 
-  const publishClipping = globalShortcut.register('CmdOrCtrl+Alt+#', () => {
-    mainWindow.webContents.send('publish-clipping');
-  });
-
   if (!createClipping) {
     console.error('Registration failed', 'createClipping');
   }
   if (!writeClipping) {
     console.error('Registration failed', 'writeClipping');
-  }
-  if (!publishClipping) {
-    console.error('Registration failed', 'publishClipping');
   }
 });
