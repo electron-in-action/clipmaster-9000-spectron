@@ -1,6 +1,5 @@
 const Application = require('spectron').Application;
 const path = require('path');
-const sinon = require('sinon');
 
 let electronPath = path.join(
   __dirname,
