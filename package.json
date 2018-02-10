@@ -22,7 +22,7 @@
   "devDependencies": {
     "eslint": "^4.17.0",
     "eslint-plugin-import": "^2.8.0",
-    "jest": "^22.2.1",
+    "jest": "^22.2.2",
     "sinon": "^4.2.2",
     "spectron": "^3.8.0"
   }
