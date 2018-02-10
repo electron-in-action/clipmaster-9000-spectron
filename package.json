@@ -15,16 +15,15 @@
     "clipboard"
   ],
   "dependencies": {
-    "electron": "^1.8.2",
-    "menubar": "^5.2.3",
-    "request": "^2.83.0"
+    "electron": "1.8.2",
+    "menubar": "5.2.3",
+    "request": "2.83.0"
   },
   "devDependencies": {
-    "eslint": "^4.17.0",
-    "eslint-plugin-import": "^2.8.0",
-    "jest": "^22.2.2",
-    "mocha": "^5.0.0",
-    "sinon": "^4.2.2",
-    "spectron": "^3.8.0"
+    "eslint": "4.17.0",
+    "eslint-plugin-import": "2.8.0",
+    "mocha": "5.0.0",
+    "sinon": "4.2.2",
+    "spectron": "3.8.0"
   }
 }
