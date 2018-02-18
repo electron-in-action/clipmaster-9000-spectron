@@ -1,21 +1,24 @@
-const Application = require('spectron').Application;
 const assert = require('assert');
-const electronPath = require('electron'); // Require Electron from the binaries included in node_modules.
 const path = require('path');
+const Application = require('spectron').Application;
+const electronPath = require('electron');
 
 const app = new Application({
   path: electronPath,
   args: [path.join(__dirname, '..')],
+  webdriverOptions: {
+    deprecationWarnings: false
+  }
 });
 
-describe('Application launch', function() {
+describe('Clipmaster 9000', function () {
   this.timeout(10000);
 
-  beforeEach(function() {
+  beforeEach(() => {
     return app.start();
   });
 
-  afterEach(function() {
+  afterEach(() => {
     if (app && app.isRunning()) {
       return app.stop();
     }
@@ -24,6 +27,11 @@ describe('Application launch', function() {
   it('shows an initial window', async () => {
     const count = await app.client.getWindowCount();
     return assert.equal(count, 1);
+  });
+
+  it('has the correct title', async () => {
+    const title = await app.client.waitUntilWindowLoaded().getTitle(); // A
+    return assert.equal(title, 'Clipmaster 9000'); // B
   });
 
   it('does not have the developer tools open', async () => {
